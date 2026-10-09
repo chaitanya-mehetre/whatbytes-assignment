@@ -42,7 +42,7 @@ export default function Header({ search, setSearch }: HeaderProps) {
           href="/cart"
           className="relative flex items-center gap-2 rounded-lg bg-[#0a3a73] px-5 py-3 font-semibold text-white"
         >
-          <ShoppingCart className="h-5 w-5" />
+          <ShoppingCart className="h-5 w-5" /> Cart
           <CartBadge />
         </Link>
       </div>
