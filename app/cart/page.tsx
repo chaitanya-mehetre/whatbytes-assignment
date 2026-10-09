@@ -86,7 +86,7 @@ export default function CartPage() {
                   </div>
 
                   <p className="text-lg font-semibold text-gray-900">
-                    ${product.price * quantity}
+                    ₹{product.price * quantity}
                   </p>
                 </div>
               ))}
