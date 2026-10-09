@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [category, setCategory] = useState("All");
@@ -46,6 +47,7 @@ export default function Home() {
           )}
         </section>
       </div>
+      <Footer />
     </main>
   );
 }
