@@ -8,10 +8,17 @@ import { products } from "@/data/products";
 export default function Home() {
   const [category, setCategory] = useState("All");
   const [price, setPrice] = useState(1000);
+
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory = category === "All" || product.category === category;
+    const matchesPrice = product.price <= price;
+    return matchesCategory && matchesPrice;
+  });
+
   return (
     <main className="bg-white">
       <Header />
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 md:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 md:flex-row items-start">
         <Sidebar
           category={category}
           setCategory={setCategory}
@@ -23,11 +30,16 @@ export default function Home() {
           <h2 className="mb-5 text-3xl font-bold text-[#206ad7]">
             Product Listing
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+
+          {filteredProducts.length === 0 ? (
+            <p className="text-lg text-gray-600">No products found.</p>
+          ) : (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </main>

@@ -16,7 +16,7 @@ export default function Sidebar({
   setPrice,
 }: SidebarProps) {
   return (
-    <aside className="w-full rounded-2xl bg-[#0b5cad] p-6 text-white md:w-64">
+    <aside className="w-full rounded-2xl bg-[#0b5cad] p-6 text-white md:w-64 md:sticky md:top-6">
       <h2 className="mb-5 text-2xl font-semibold">Fliter</h2>
       <h3 className="mb-3 text-lg font-medium">Category</h3>
       <div className="space-y-3">
