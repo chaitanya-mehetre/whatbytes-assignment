@@ -14,10 +14,10 @@ export default function CartPage() {
   const [search, setSearch] = useState("");
 
   return (
-    <main>
+    <main className="flex flex-col min-h-screen bg-gray-50">
       <Header search={search} setSearch={setSearch} />
 
-      <div className="mx-auto max-w-6xl px-6 py-8">
+      <div className="mx-auto max-w-6xl w-full px-6 py-8 grow">
         <h1 className="mb-6 text-3xl font-bold text-[#0a2f66]">Your Cart</h1>
 
         {items.length === 0 ? (
@@ -51,7 +51,7 @@ export default function CartPage() {
                       {product.title}
                     </h3>
                     <p className="font-semibold text-gray-900">
-                      ${product.price}
+                      ₹{product.price}
                     </p>
 
                     <div className="mt-2 flex items-center gap-3">
@@ -102,7 +102,7 @@ export default function CartPage() {
               </div>
               <div className="mt-2 flex justify-between text-lg font-semibold text-gray-900">
                 <span>Total</span>
-                <span>${totalPrice}</span>
+                <span>₹{totalPrice}</span>
               </div>
               <button
                 onClick={() => alert("Thank you! Your order has been placed.")}

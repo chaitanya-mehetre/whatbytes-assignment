@@ -12,7 +12,7 @@ export const products: Product[] = [
   {
     id: 1,
     title: "Running Shoes",
-    price: 99,
+    price: 699,
     category: "Clothing",
     image: "/products/running-shoes.jpg",
     description: "Lightweight running shoes with a comfortable cushioned sole.",
@@ -21,7 +21,7 @@ export const products: Product[] = [
   {
     id: 2,
     title: "Wireless Headphones",
-    price: 199,
+    price: 899,
     category: "Electronics",
     image: "/products/headphones.jpg",
     description: "Over-ear wireless headphones with rich sound and long battery life.",
@@ -30,7 +30,7 @@ export const products: Product[] = [
   {
     id: 3,
     title: "Backpack",
-    price: 129,
+    price: 799,
     category: "Clothing",
     image: "/products/backpack.jpg",
     description: "Durable everyday backpack with plenty of storage space.",
@@ -66,7 +66,7 @@ export const products: Product[] = [
   {
     id: 7,
     title: "T-shirt",
-    price: 29,
+    price: 549,
     category: "Clothing",
     image: "/products/tshirt.jpg",
     description: "Soft cotton t-shirt for everyday wear.",

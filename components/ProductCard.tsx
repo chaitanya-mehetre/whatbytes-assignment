@@ -37,8 +37,8 @@ export default function ProductCard({
               {product.title}
             </h3>
           </Link>
-          <p className="mt-1 text-xl font-semibold text-gray-900">
-            ${product.price}
+          <p className="mt-1 text-xl font-bold text-gray-900">
+            ₹{product.price}
           </p>
 
           <div className="mt-2 flex gap-1">
@@ -92,7 +92,7 @@ export default function ProductCard({
       </Link>
 
       <div className="mt-2">
-        <p className="text-xl font-black text-gray-900">${product.price}</p>
+        <p className="text-xl font-bold text-gray-900">₹{product.price}</p>
         <button
           onClick={() => addToCart(product)}
           className="mt-3 w-full rounded-lg bg-[#0b5cad] py-2.5 font-semibold text-white transition-colors hover:bg-[#0a4f96]"

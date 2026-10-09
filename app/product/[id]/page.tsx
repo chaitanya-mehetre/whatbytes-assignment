@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
                 {product.title}
               </h1>
               <p className="mt-2 text-2xl font-semibold text-gray-900">
-                ${product.price}
+                ₹{product.price}
               </p>
 
               <div className="mt-2 flex gap-1">
