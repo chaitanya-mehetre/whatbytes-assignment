@@ -1,7 +1,12 @@
-import Image from "next/image"
+import Image from "next/image";
 import { Search, ShoppingCart } from "lucide-react";
 
-export default function Header() {
+type HeaderProps = {
+  search: string;
+  setSearch: (value: string) => void;
+};
+
+export default function Header({ search, setSearch }: HeaderProps) {
   return (
     <header className="bg-[#0b5cad] px-6 py-4 md:px-12">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
@@ -20,6 +25,8 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search for products..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             className="w-full bg-transparent text-white placeholder-white outline-none"
           />
         </div>

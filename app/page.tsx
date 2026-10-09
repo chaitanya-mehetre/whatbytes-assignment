@@ -8,16 +8,20 @@ import { products } from "@/data/products";
 export default function Home() {
   const [category, setCategory] = useState("All");
   const [price, setPrice] = useState(1000);
+  const [search, setSearch] = useState("");
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory = category === "All" || product.category === category;
     const matchesPrice = product.price <= price;
-    return matchesCategory && matchesPrice;
+    const matchesSearch = product.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    return matchesCategory && matchesPrice && matchesSearch;
   });
 
   return (
     <main className="bg-white">
-      <Header />
+      <Header search={search} setSearch={setSearch} />
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 md:flex-row items-start">
         <Sidebar
           category={category}
