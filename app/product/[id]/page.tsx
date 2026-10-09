@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
-export default function ProductDetailPage() {
+function ProductDetailContent() {
   const params = useParams();
   const { addToCart } = useCart();
   const [search, setSearch] = useState("");
@@ -105,5 +105,13 @@ export default function ProductDetailPage() {
 
       <Footer />
     </main>
+  );
+}
+
+export default function ProductDetailPage() {
+  return (
+    <Suspense fallback={null}>
+      <ProductDetailContent />
+    </Suspense>
   );
 }
