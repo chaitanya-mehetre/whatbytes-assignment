@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Search, ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 type HeaderProps = {
   search: string;
@@ -7,6 +9,7 @@ type HeaderProps = {
 };
 
 export default function Header({ search, setSearch }: HeaderProps) {
+  const { totalItems } = useCart();
   return (
     <header className="bg-[#0b5cad] px-6 py-4 md:px-12">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
@@ -31,9 +34,17 @@ export default function Header({ search, setSearch }: HeaderProps) {
           />
         </div>
 
-        <button className="flex items-center gap-2 rounded-lg bg-[#0a3a73] px-5 py-3 font-semibold text-white">
+        <Link
+          href="/cart"
+          className="relative flex items-center gap-2 rounded-lg bg-[#0a3a73] px-5 py-3 font-semibold text-white"
+        >
           <ShoppingCart className="h-5 w-5" />
-        </button>
+          {totalItems > 0 && (
+            <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-orange-500 text-xs font-bold text-white">
+              {totalItems}
+            </span>
+          )}
+        </Link>
       </div>
     </header>
   );
